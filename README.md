@@ -1,5 +1,5 @@
 # Live version assignments
-https://rvdpas.github.io/minor/css-to-the-rescue/styleguide.html
+https://rvdpas.github.io/minor/css-to-the-rescue/version-2/styleguide.html
 
 ## Components
 
