@@ -1,3 +1,4 @@
+/* Default styles */
 img, object, video, iframe {
   max-width: 100%;
 }
@@ -33,6 +34,7 @@ section, #picture-with-subtitle, #rating, nav {
 
 ol, ul {
   list-style: none;
+  padding: 0;
 }
 
 body > h1 {
@@ -43,6 +45,11 @@ body > h1 {
 
 main {
   background: #fff;
+}
+
+header {
+  border-bottom: 1px solid #498f3c;
+  margin-bottom: 1em;
 }
 
 /* Ampersand */
@@ -109,12 +116,79 @@ body > a:hover {
   z-index: 1;
 }
 
-/* media component */
-header {
-  border-bottom: 1px solid #498f3c;
-  margin-bottom: 1em;
+/* Navigation */
+#navigation a {
+  display: block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+  background: #e1e1e1;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
 
+#navigation a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #498f3c;
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+#navigation a:hover, #navigation a:focus, #navigation a:active {
+  color: #fff;
+}
+
+#navigation a:hover:before, #navigation a:focus:before, #navigation a:active:before {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
+
+#navigation ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#navigation ul li {
+  -ms-transform: skewX(-20deg);
+  -webkit-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+#navigation ul li a {
+  text-decoration: none;
+  padding: 1em;
+  background: #c1c1c1;
+  color: #fff;
+}
+
+#navigation ul ul {
+  display: none;
+}
+
+#navigation ul li:hover ul {
+  display: block;
+}
+
+/* media component */
 #media h2 {
   margin-bottom: 1em;
 }
@@ -140,17 +214,17 @@ header {
   clear: both;
 }
 
-#media h2 a {
+#media a {
   color: #498f3c;
   text-decoration: none;
   cursor: pointer;
 }
 
-#media h2 a:hover {
+#media a:hover {
   text-decoration: underline;
 }
 
-#media h2 a::after {
+#media a::after {
   content: "";
   position: absolute;
   top: 0;
@@ -170,6 +244,17 @@ header {
     padding: 0 1em;
     box-sizing: border-box;
   }
+
+  #media article:first-of-type p {
+    position: absolute;
+    background: #000;
+    color: #fff;
+    bottom: 0;
+    left: 1em;
+    right: 1em;
+    padding: 1em;
+    opacity: 0.7;
+  }
 }
 
 @media (min-width: 70em) {
@@ -183,10 +268,6 @@ header {
   }
 
   #media article:first-of-type {
-    width: 100%;
-  }
-
-  #media article img {
     width: 100%;
   }
 }
@@ -312,7 +393,15 @@ button:hover {
   font-size: 1em;
 }
 
-#login form input[type="email"], [type="password"]:focus {
+#login form input[type="email"]:valid, [type="password"]:valid{
+  border: 3px solid #498f3c;
+}
+
+#login form input[type="email"]:invalid, [type="password"]:invalid{
+  border: 2px solid red;
+}
+
+#login form input[type="email"]:focus, [type="password"]:focus {
   border: 1px solid #498f3c;
   transition: border 1s;
 }
@@ -329,6 +418,7 @@ button:hover {
 #login form a {
   text-decoration: underline;
   margin-bottom: 1em;
+  color: #498f3c;
 }
 
 /* Picture with subtitle */
@@ -408,23 +498,28 @@ button:hover {
 }
 
 /* Step indicator */
-#step-indicator progress {
+#step-indicator progress[value] {
   width: 100%;
   height: 3em;
   background: #3aaa35;
   border-radius: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
 }
 
-progress::-webkit-progress-value {
-  background: #3aaa35;
+progress[value]::-webkit-progress-value {
+  border-radius: 4px;
 }
 
-progress::-webkit-progress-bar {
- background: #c1c1c1;
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
 
-progress::-moz-progress-bar {
-  background: #c1c1c1;
+progress[value]::-moz-progress-bar {
+  background: #eee;
 }
 
 #step-indicator ol {
@@ -498,4 +593,19 @@ progress::-moz-progress-bar {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 100%;
+  grid-gap: 1em;
+}
+
+.grid div {
+  background: blue;
+  border: 1px solid #333;
+  border-radius: 3px;
+  color: #fff;
 }

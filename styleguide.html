@@ -26,33 +26,57 @@
 <!-- Media component -->
 
 <main>
+
+    <nav id="navigation">
+        <header>
+            <h1>Main navigation</h1>
+        </header>
+
+        <ul>
+            <li><a href="#main-content" aria-label="Home, current page">Home</a></li>
+            <li>
+                <a href="/products">Products</a>
+
+                <ul>
+                    <li><a href="/products/rock">Rock</a></li>
+                    <li><a href="/products/paper">Paper</a></li>
+                    <li><a href="/products/scissors">Scissors</a></li>
+                </ul>
+
+            </li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
     <section id="media">
         <header>
             <h1>Media component</h1>
         </header>
         <article>
-        	<h2><a href="/">HTML5 accessibility, are block links hurting accessibility?</a></h2>
+        	<a href="/"><h2>HTML5 accessibility, are block links hurting accessibility?</h2></a>
 
         	<img src="https://vasilis.nl/voto/fotos/klein/161001174911-verhuizen-1280.jpg" alt="A bulldozer transporting a beach house along a sunny beach" />
 
         	<p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML. A recent article by @feather concludes that the inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
         </article>
         <article>
-            <h2><a href="/">HTML5 accessibility, are block links hurting accessibility?</a></h2>
+            <a href="/"><h2>HTML5 accessibility, are block links hurting accessibility?</h2></a>
 
             <img src="https://vasilis.nl/voto/fotos/klein/161001174911-verhuizen-1280.jpg" alt="A bulldozer transporting a beach house along a sunny beach" />
 
             <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML. A recent article by @feather concludes that the inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
         </article>
         <article>
-            <h2><a href="/">HTML5 accessibility, are block links hurting accessibility?</a></h2>
+            <a href="/"><h2>HTML5 accessibility, are block links hurting accessibility?</h2></a>
 
             <img src="https://vasilis.nl/voto/fotos/klein/161001174911-verhuizen-1280.jpg" alt="A bulldozer transporting a beach house along a sunny beach" />
 
             <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML. A recent article by @feather concludes that the inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
         </article>
         <article>
-            <h2><a href="/">HTML5 accessibility, are block links hurting accessibility?</a></h2>
+            <a href="/"><h2>HTML5 accessibility, are block links hurting accessibility?</h2></a>
 
             <img src="https://vasilis.nl/voto/fotos/klein/161001174911-verhuizen-1280.jpg" alt="A bulldozer transporting a beach house along a sunny beach" />
 
@@ -143,8 +167,6 @@
             <!-- Portrait -->
             <img src="https://vasilis.nl/voto/fotos/klein/161001174911-verhuizen-1280.jpg" alt="A bulldozer transporting a beach house along a sunny beach" />
 
-            <!-- Landscape -->
-            <!-- <img src="https://vasilis.nl/voto/fotos/klein/161001174911-verhuizen-1280.jpg" alt="A bulldozer transporting a beach house along a sunny beach" /> -->
             <figcaption>
                 <p>
                     There's also this big and in depth description of the picture. You often see this on newssites or photo blogs. You could also replace the photo with a video if needed.
@@ -215,6 +237,17 @@
     <!-- Loading spinner -->
     <section>
         <div class="loader"></div>
+    </section>
+
+
+    <section class="grid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
     </section>
 </main>
 
